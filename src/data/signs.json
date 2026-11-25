@@ -1,0 +1,1007 @@
+[
+  {
+    "english": "Hello",
+    "urdu": "سلام",
+    "category": "Greetings",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/hello_1622639997_35977.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/h/720p/hello_1622639997_27565.mp4"
+  },
+  {
+    "english": "Goodbye",
+    "urdu": "خدا حافظ",
+    "category": "Greetings",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/goodbye_1622639922_48219.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/g/720p/goodbye_1622639922_91927.mp4"
+  },
+  {
+    "english": "Please",
+    "urdu": "براہ کرم",
+    "category": "Greetings",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/please_1622733157_97419.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/p/720p/please_1622733157_73927.mp4"
+  },
+  {
+    "english": "Thank you",
+    "urdu": "شکریہ",
+    "category": "Greetings",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/thank_you_1622733246_37697.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/t/720p/thank_you_1622733246_84304.mp4"
+  },
+  {
+    "english": "Sorry",
+    "urdu": "معاف کیجیے",
+    "category": "Greetings",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/sorry_1623775742_47847.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/s/720p/sorry_1623775742_56660.mp4"
+  },
+  {
+    "english": "Yes",
+    "urdu": "ہاں",
+    "category": "Greetings",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/yes_1622733780_87442.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/dictionary/65-sentences/4396-yes/4396-yes/4396-yes-signvideo-1oOA2K.mp4"
+  },
+  {
+    "english": "No",
+    "urdu": "نہیں",
+    "category": "Greetings",
+    "camera": true
+  },
+  {
+    "english": "Help",
+    "urdu": "مدد",
+    "category": "Greetings",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/help_1623253688_82234.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/h/720p/help_1623253688_82961.mp4"
+  },
+  {
+    "english": "Understand",
+    "urdu": "سمجھ",
+    "category": "Greetings",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/understand_1623340353_77244.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/u/720p/understand_1623340353_24838.mp4"
+  },
+  {
+    "english": "Name",
+    "urdu": "نام",
+    "category": "Greetings",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/name_1619520845_64651.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/n/720p/name_1619520845_45755.mp4"
+  },
+  {
+    "english": "Friend",
+    "urdu": "دوست",
+    "category": "Greetings",
+    "camera": false
+  },
+  {
+    "english": "Good morning",
+    "urdu": "صبح بخیر",
+    "category": "Greetings",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/good_morning_1622639885_30109.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/g/720p/good_morning_1622639885_72810.mp4"
+  },
+  {
+    "english": "Good night",
+    "urdu": "شب بخیر",
+    "category": "Greetings",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/good_night_1622639903_85435.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/g/720p/good_night_1622639903_96833.mp4"
+  },
+  {
+    "english": "Mother",
+    "urdu": "ماں",
+    "category": "People",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/mother_1620730084_32004.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/m/720p/mother_1620730084_77135.mp4"
+  },
+  {
+    "english": "Father",
+    "urdu": "والد",
+    "category": "People",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/father_(1)_1620323264_82385.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/f/720p/father_(1)_1620323264_68430.mp4"
+  },
+  {
+    "english": "Sister",
+    "urdu": "بہن",
+    "category": "People",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/sister_1620731612_87665.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/s/720p/sister_1620731612_79368.mp4"
+  },
+  {
+    "english": "Brother",
+    "urdu": "بھائی",
+    "category": "People",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/brother_1620321124_47134.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/b/720p/brother_1620321124_91331.mp4"
+  },
+  {
+    "english": "Son",
+    "urdu": "بیٹا",
+    "category": "People",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/son_1620731702_94096.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/s/720p/son_1620731702_67186.mp4"
+  },
+  {
+    "english": "Daughter",
+    "urdu": "بیٹی",
+    "category": "People",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/daughter_1620321584_13360.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/d/720p/daughter_1620321584_74967.mp4"
+  },
+  {
+    "english": "Wife",
+    "urdu": "بیوی",
+    "category": "People",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/wife_1620731962_55091.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/w/720p/wife_1620731962_56191.mp4"
+  },
+  {
+    "english": "Husband",
+    "urdu": "شوہر",
+    "category": "People",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/husband_1620729406_98296.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/h/720p/husband_1620729406_62934.mp4"
+  },
+  {
+    "english": "Family",
+    "urdu": "خاندان",
+    "category": "People",
+    "camera": false
+  },
+  {
+    "english": "Child",
+    "urdu": "بچہ",
+    "category": "People",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/child_1620321270_14612.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/c/720p/child_1620321270_66709.mp4"
+  },
+  {
+    "english": "Man",
+    "urdu": "مرد",
+    "category": "People",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/man_1620729802_76390.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/m/720p/man_1620729802_67965.mp4"
+  },
+  {
+    "english": "Woman",
+    "urdu": "عورت",
+    "category": "People",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/woman_1620731983_12303.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/w/720p/woman_1620731983_44434.mp4"
+  },
+  {
+    "english": "Boy",
+    "urdu": "لڑکا",
+    "category": "People",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/boy_1620321078_67006.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/b/720p/boy_1620321078_51780.mp4"
+  },
+  {
+    "english": "Girl",
+    "urdu": "لڑکی",
+    "category": "People",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/girl_1620728706_50814.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/g/720p/girl_1620728706_15035.mp4"
+  },
+  {
+    "english": "Baby",
+    "urdu": "ننھا بچہ",
+    "category": "People",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/baby_1620320973_68275.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/b/720p/baby_1620320973_72278.mp4"
+  },
+  {
+    "english": "Teacher",
+    "urdu": "استاد",
+    "category": "People",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/teacher_1619976384_67550.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/t/720p/teacher_1619976384_29000.mp4"
+  },
+  {
+    "english": "Student",
+    "urdu": "طالب علم",
+    "category": "People",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/student_1619976310_41367.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/s/720p/student_1619976310_83180.mp4"
+  },
+  {
+    "english": "Deaf",
+    "urdu": "بہرا",
+    "category": "People",
+    "camera": false
+  },
+  {
+    "english": "Doctor",
+    "urdu": "ڈاکٹر",
+    "category": "People",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/doctor_1622524762_95644.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/d/720p/doctor_1622524762_18002.mp4"
+  },
+  {
+    "english": "Happy",
+    "urdu": "خوش",
+    "category": "Feelings",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/happy_1623596118_27333.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/h/720p/happy_1623596118_22743.mp4"
+  },
+  {
+    "english": "Sad",
+    "urdu": "اداس",
+    "category": "Feelings",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/sad_1623730459_33330.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/s/720p/sad_1623730459_12985.mp4"
+  },
+  {
+    "english": "Angry",
+    "urdu": "ناراض",
+    "category": "Feelings",
+    "camera": false
+  },
+  {
+    "english": "Afraid",
+    "urdu": "ڈر",
+    "category": "Feelings",
+    "camera": false
+  },
+  {
+    "english": "Tired",
+    "urdu": "تھکا ہوا",
+    "category": "Feelings",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/tired_1623777074_82998.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/t/720p/tired_1623777074_42166.mp4"
+  },
+  {
+    "english": "Love",
+    "urdu": "محبت",
+    "category": "Feelings",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/love_1623254842_67510.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/l/720p/love_1623254842_24556.mp4"
+  },
+  {
+    "english": "Like",
+    "urdu": "پسند",
+    "category": "Feelings",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/like_1623254748_64786.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/l/720p/like_1623254748_63942.mp4"
+  },
+  {
+    "english": "Sick",
+    "urdu": "بیمار",
+    "category": "Feelings",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/sick_1621410283_26695.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/s/720p/sick_1621410283_80775.mp4"
+  },
+  {
+    "english": "Pain",
+    "urdu": "درد",
+    "category": "Feelings",
+    "camera": false
+  },
+  {
+    "english": "Cry",
+    "urdu": "رونا",
+    "category": "Feelings",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/cry_1623175425_78208.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/c/720p/cry_1623175425_73140.mp4"
+  },
+  {
+    "english": "Laugh",
+    "urdu": "ہنسنا",
+    "category": "Feelings",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/laugh_1623254539_72455.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/l/720p/laugh_1623254539_35151.mp4"
+  },
+  {
+    "english": "Food",
+    "urdu": "کھانا",
+    "category": "Food",
+    "camera": false
+  },
+  {
+    "english": "Water",
+    "urdu": "پانی",
+    "category": "Food",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/BWk1TtPFVZNlpnx0gZpA1667201406370.png",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/w/720p/Water_1667201365_94348.mp4"
+  },
+  {
+    "english": "Milk",
+    "urdu": "دودھ",
+    "category": "Food",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/milk_1620317359_42357.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/m/720p/milk_1620317359_39287.mp4"
+  },
+  {
+    "english": "Tea",
+    "urdu": "چائے",
+    "category": "Food",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/tea_1620320674_35273.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/t/720p/tea_1620320674_32487.mp4"
+  },
+  {
+    "english": "Bread",
+    "urdu": "روٹی",
+    "category": "Food",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/bread_1621157749_63740.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/b/720p/bread_1621157749_45196.mp4"
+  },
+  {
+    "english": "Rice",
+    "urdu": "چاول",
+    "category": "Food",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/rice_1621162546_59283.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/r/720p/rice_1621162546_75384.mp4"
+  },
+  {
+    "english": "Egg",
+    "urdu": "انڈا",
+    "category": "Food",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/p67Nd6EU0YgJLqtN0r0p1680107534912.png",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/e/720p/egg_1680106973_44965.mp4"
+  },
+  {
+    "english": "Meat",
+    "urdu": "گوشت",
+    "category": "Food",
+    "camera": false
+  },
+  {
+    "english": "Fruit",
+    "urdu": "پھل",
+    "category": "Food",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/fruit_1621170223_96780.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/f/720p/fruit_1621170223_62877.mp4"
+  },
+  {
+    "english": "Hungry",
+    "urdu": "بھوک",
+    "category": "Food",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/hungry_1623658630_61706.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/h/720p/hungry_1623658630_67077.mp4"
+  },
+  {
+    "english": "Thirsty",
+    "urdu": "پیاسا",
+    "category": "Food",
+    "camera": false
+  },
+  {
+    "english": "Eat",
+    "urdu": "کھائیں",
+    "category": "Food",
+    "camera": false,
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/dictionary/72-verbs/8070-eat/8115-eat/8115-eat-signvideo-Q71lPB.mp4"
+  },
+  {
+    "english": "Drink",
+    "urdu": "پیئیں",
+    "category": "Food",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/drink_1623176235_68024.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/d/720p/drink_1623176235_16497.mp4"
+  },
+  {
+    "english": "Today",
+    "urdu": "آج",
+    "category": "Time",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/today_1619870296_21869.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/t/720p/today_1619870296_71974.mp4"
+  },
+  {
+    "english": "Tomorrow",
+    "urdu": "آئندہ کل",
+    "category": "Time",
+    "camera": false,
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/dictionary/22-calendar-time/8043-tomorrow/8083-tomorrow/8083-tomorrow-signvideo-hqOLj3.mp4"
+  },
+  {
+    "english": "Yesterday",
+    "urdu": "گزشتہ کل",
+    "category": "Time",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/yesterday_1619870670_76596.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/y/720p/yesterday_1619870670_36605.mp4"
+  },
+  {
+    "english": "Morning",
+    "urdu": "صبح",
+    "category": "Time",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/morning_1619869366_83540.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/m/720p/morning_1619869366_48001.mp4"
+  },
+  {
+    "english": "Night",
+    "urdu": "رات",
+    "category": "Time",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/night_1619869436_79018.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/n/720p/night_1619869436_64119.mp4"
+  },
+  {
+    "english": "Now",
+    "urdu": "اب",
+    "category": "Time",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/now_1609132535_95267.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/n/720p/now_1609132535_90172.mp4"
+  },
+  {
+    "english": "Later",
+    "urdu": "بعد میں",
+    "category": "Time",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/later_1619869116_82740.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/l/720p/later_1619869116_37619.mp4"
+  },
+  {
+    "english": "Monday",
+    "urdu": "پیر",
+    "category": "Time",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/Monday_1619869319_17104.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/m/720p/Monday_1619869319_81385.mp4"
+  },
+  {
+    "english": "Tuesday",
+    "urdu": "منگل",
+    "category": "Time",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/tuesday_1619870349_51595.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/t/720p/tuesday_1619870349_92777.mp4"
+  },
+  {
+    "english": "Wednesday",
+    "urdu": "بدھ",
+    "category": "Time",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/Wednesday_1619870373_72711.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/w/720p/Wednesday_1619870373_91340.mp4"
+  },
+  {
+    "english": "Thursday",
+    "urdu": "جمعرات",
+    "category": "Time",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/Thursday_1619870237_98099.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/t/720p/Thursday_1619870237_47281.mp4"
+  },
+  {
+    "english": "Friday",
+    "urdu": "جمعہ",
+    "category": "Time",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/Friday_1619868861_29448.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/f/720p/Friday_1619868861_40366.mp4"
+  },
+  {
+    "english": "Saturday",
+    "urdu": "ہفتہ",
+    "category": "Time",
+    "camera": false,
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/dictionary/22-calendar-time/8042-saturday/8082-saturday/8082-saturday-signvideo-VhHY9L.mp4"
+  },
+  {
+    "english": "Sunday",
+    "urdu": "اتوار",
+    "category": "Time",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/Sunday_1619870213_69061.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/s/720p/Sunday_1619870213_12860.mp4"
+  },
+  {
+    "english": "Zero",
+    "urdu": "صفر",
+    "category": "Numbers",
+    "camera": false,
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/dictionary/58-numbers/8109-zero/8089-zero/8089-zero-signvideo-ThcZY2.mp4"
+  },
+  {
+    "english": "One",
+    "urdu": "ایک",
+    "category": "Numbers",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/one_1660298799_25808.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/o/720p/One._1660298799_85596.mp4"
+  },
+  {
+    "english": "Two",
+    "urdu": "دو",
+    "category": "Numbers",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/EkaqPljN5ppjFlA0MviG1680120165747.png",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/t/720p/two_1680119661_32772.mp4"
+  },
+  {
+    "english": "Three",
+    "urdu": "تین",
+    "category": "Numbers",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/KHOjpeFPtnpmxRRiXi8y1680119755732.png",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/t/720p/three_1680119282_13744.mp4"
+  },
+  {
+    "english": "Four",
+    "urdu": "چار",
+    "category": "Numbers",
+    "camera": false,
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/dictionary/58-numbers/8032-four_number/8072-four_number/8072-four_number-signvideo-nYEoMY.mp4"
+  },
+  {
+    "english": "Five",
+    "urdu": "پانچ",
+    "category": "Numbers",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/JtLF6H7870MHPNfgplNk1680108759998.png",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/f/720p/five_1680108168_89159.mp4"
+  },
+  {
+    "english": "Six",
+    "urdu": "چھ",
+    "category": "Numbers",
+    "camera": false,
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/dictionary/58-numbers/8033-six_number/8090-six_number/8090-six_number-signvideo-2q98bT.mp4"
+  },
+  {
+    "english": "Seven",
+    "urdu": "سات",
+    "category": "Numbers",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/myYd9KLYNhkCn2TPMmci1680118470671.png",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/s/720p/seven_1680117932_46048.mp4"
+  },
+  {
+    "english": "Eight",
+    "urdu": "آٹھ",
+    "category": "Numbers",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/cAPYFjgmnRNsccOkMyAa1680107604908.png",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/e/720p/eight_1680107033_94207.mp4"
+  },
+  {
+    "english": "Nine",
+    "urdu": "نو",
+    "category": "Numbers",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/Pk0MwVziTdnuerY0hhbR1680111300312.png",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/n/720p/nine_1680110887_42070.mp4"
+  },
+  {
+    "english": "Ten",
+    "urdu": "دس",
+    "category": "Numbers",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/10_1622204350_44489.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/1/720p/10_1622204350_38597.mp4"
+  },
+  {
+    "english": "Hundred",
+    "urdu": "سو",
+    "category": "Numbers",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/100_1622204504_13375.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/1/720p/100_1622204504_49688.mp4"
+  },
+  {
+    "english": "Thousand",
+    "urdu": "ہزار",
+    "category": "Numbers",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/one_thousand_1622204758_15070.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/o/720p/one_thousand_1622204758_20832.mp4"
+  },
+  {
+    "english": "What",
+    "urdu": "کیا",
+    "category": "Questions",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/what_1622733598_15682.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/w/720p/what_1622733598_87505.mp4"
+  },
+  {
+    "english": "Where",
+    "urdu": "کہاں",
+    "category": "Questions",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/where_1622733659_30993.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/w/720p/where_1622733659_78747.mp4"
+  },
+  {
+    "english": "Who",
+    "urdu": "کون",
+    "category": "Questions",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/who_1622733689_59329.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/w/720p/who_1622733689_51496.mp4"
+  },
+  {
+    "english": "When",
+    "urdu": "کب",
+    "category": "Questions",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/when_1622733617_14012.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/w/720p/when_1622733617_22896.mp4"
+  },
+  {
+    "english": "Why",
+    "urdu": "کیوں",
+    "category": "Questions",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/why_1622733722_15029.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/w/720p/why_1622733722_54873.mp4"
+  },
+  {
+    "english": "How",
+    "urdu": "کیسے",
+    "category": "Questions",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/JUxf90nh5XMQCEvNuDJv1680110320144.png",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/h/720p/how_1680109312_32300.mp4"
+  },
+  {
+    "english": "How much",
+    "urdu": "کتنا",
+    "category": "Questions",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/how_much_1622731621_62486.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/h/720p/how_much_1622731621_75945.mp4"
+  },
+  {
+    "english": "Home",
+    "urdu": "گھر",
+    "category": "Daily life",
+    "camera": false
+  },
+  {
+    "english": "School",
+    "urdu": "اسکول",
+    "category": "Daily life",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/school_1619976131_27906.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/s/720p/school_1619976131_58347.mp4"
+  },
+  {
+    "english": "Hospital",
+    "urdu": "ہسپتال",
+    "category": "Daily life",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/hospital_1621357420_47715.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/h/720p/hospital_1621357420_32613.mp4"
+  },
+  {
+    "english": "Work",
+    "urdu": "کام",
+    "category": "Daily life",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/work_1623340870_99440.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/w/720p/work_1623340870_74627.mp4"
+  },
+  {
+    "english": "Stop",
+    "urdu": "رکو",
+    "category": "Daily life",
+    "camera": false
+  },
+  {
+    "english": "Come",
+    "urdu": "آؤ",
+    "category": "Daily life",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/come_1623164341_27826.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/c/720p/come_1623164341_47268.mp4"
+  },
+  {
+    "english": "Go",
+    "urdu": "جاؤ",
+    "category": "Daily life",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/go_1623253440_26940.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/g/720p/go_1623253440_98918.mp4"
+  },
+  {
+    "english": "Wait",
+    "urdu": "انتظار",
+    "category": "Daily life",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/wait_1623080263_34433.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/w/720p/wait_1623080263_98777.mp4"
+  },
+  {
+    "english": "Want",
+    "urdu": "چاہنا",
+    "category": "Daily life",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/want_1623340716_15224.mp4",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/w/720p/want_1623340716_43745.mp4"
+  },
+  {
+    "english": "Need",
+    "urdu": "ضرورت",
+    "category": "Daily life",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/need_1623255104_90508.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/n/720p/need_1623255104_44813.mp4"
+  },
+  {
+    "english": "Bathroom",
+    "urdu": "باتھ روم",
+    "category": "Daily life",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/Bathroom_1619339227_73517.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/b/720p/Bathroom_1619339227_27153.mp4"
+  },
+  {
+    "english": "Emergency",
+    "urdu": "ہنگامی",
+    "category": "Daily life",
+    "camera": false,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/emergency_1622091929_59035.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/e/720p/emergency_1622091929_99524.mp4"
+  },
+  {
+    "english": "Alert",
+    "urdu": "خبردار",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/alert_1623421322_99209.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/a/720p/alert_1623421322_24160.mp4"
+  },
+  {
+    "english": "Careful",
+    "urdu": "محتاط",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/careful_1623424002_28969.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/c/720p/careful_1623424002_14089.mp4"
+  },
+  {
+    "english": "Cheap",
+    "urdu": "سستا",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/cheap_1623424538_98560.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/c/720p/cheap_1623424538_30857.mp4"
+  },
+  {
+    "english": "Crazy",
+    "urdu": "پاگل",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/crazy_1623432178_35592.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/c/720p/crazy_1623432178_68538.mp4"
+  },
+  {
+    "english": "Dangerous",
+    "urdu": "خطرناک",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/dangerous_1623432392_53551.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/d/720p/dangerous_1623432392_90718.mp4"
+  },
+  {
+    "english": "Decent",
+    "urdu": "مناسب",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/decent_1623432505_71243.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/d/720p/decent_1623432505_20961.mp4"
+  },
+  {
+    "english": "Dumb",
+    "urdu": "بے وقوف",
+    "category": "Descriptions",
+    "camera": true
+  },
+  {
+    "english": "Excited",
+    "urdu": "پرجوش",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/excited_1623582726_29376.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/e/720p/excited_1623582726_74883.mp4"
+  },
+  {
+    "english": "Extreme",
+    "urdu": "شدید",
+    "category": "Descriptions",
+    "camera": true
+  },
+  {
+    "english": "Fantastic",
+    "urdu": "شاندار",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/fantastic_1623594819_99413.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/f/720p/fantastic_1623594819_40213.mp4"
+  },
+  {
+    "english": "Far",
+    "urdu": "دور",
+    "category": "Descriptions",
+    "camera": true
+  },
+  {
+    "english": "Fearful",
+    "urdu": "خوفزدہ",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/fearful_1623595004_30850.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/f/720p/fearful_1623595004_74683.mp4"
+  },
+  {
+    "english": "Foreign",
+    "urdu": "غیر ملکی",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/foreign_1623595256_90578.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/f/720p/foreign_1623595256_73568.mp4"
+  },
+  {
+    "english": "Funny",
+    "urdu": "مزاحیہ",
+    "category": "Descriptions",
+    "camera": true
+  },
+  {
+    "english": "Good",
+    "urdu": "اچھا",
+    "category": "Descriptions",
+    "camera": true,
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/dictionary/1-adjectives/8037-good/8077-good/8077-good-signvideo-bU2p70.mp4"
+  },
+  {
+    "english": "Healthy",
+    "urdu": "صحت مند",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/healthy_1623658089_64216.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/h/720p/healthy_1623658089_47945.mp4"
+  },
+  {
+    "english": "Heavy",
+    "urdu": "بھاری",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/heavy_1623658117_69057.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/h/720p/heavy_1623658117_96789.mp4"
+  },
+  {
+    "english": "Important",
+    "urdu": "اہم",
+    "category": "Descriptions",
+    "camera": true
+  },
+  {
+    "english": "Intelligent",
+    "urdu": "ذہین",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/intelligent_1623672606_55105.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/i/720p/intelligent_1623672606_87818.mp4"
+  },
+  {
+    "english": "Interesting",
+    "urdu": "دلچسپ",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/interesting_1623672676_51445.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/i/720p/interesting_1623672676_31108.mp4"
+  },
+  {
+    "english": "Late",
+    "urdu": "دیر",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/late_1623673043_99501.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/l/720p/late_1623673043_46295.mp4"
+  },
+  {
+    "english": "Less",
+    "urdu": "کم",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/less_1623673127_11442.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/l/720p/less_1623673127_17325.mp4"
+  },
+  {
+    "english": "New",
+    "urdu": "نیا",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/new_1623728730_37774.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/n/720p/new_1623728730_45129.mp4"
+  },
+  {
+    "english": "Noisy",
+    "urdu": "شور والا",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/noisy_1623728767_77558.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/n/720p/noisy_1623728767_69397.mp4"
+  },
+  {
+    "english": "Peaceful",
+    "urdu": "پرامن",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/peaceful_1623729432_42989.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/p/720p/peaceful_1623729432_68823.mp4"
+  },
+  {
+    "english": "Quick",
+    "urdu": "تیز",
+    "category": "Descriptions",
+    "camera": true
+  },
+  {
+    "english": "Ready",
+    "urdu": "تیار",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/ready_1623729958_84364.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/r/720p/ready_1623729958_47735.mp4"
+  },
+  {
+    "english": "Secure",
+    "urdu": "محفوظ",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/secure_1623730742_61083.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/s/720p/secure_1623730742_81065.mp4"
+  },
+  {
+    "english": "Smart",
+    "urdu": "ہوشیار",
+    "category": "Descriptions",
+    "camera": true,
+    "image": "https://d2a517kx38mlos.cloudfront.net/psl/public/posters/smart_1623731413_87618.jpg",
+    "video": "https://d2a517kx38mlos.cloudfront.net/psl/public/videos/s/720p/smart_1623731413_18261.mp4"
+  }
+]

@@ -1,283 +1,339 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import {
-  Camera, Type, Volume2, Copy, Mic, RefreshCw,
-  CheckCircle, AlertCircle, Languages, Zap, Clock, User
-} from 'lucide-react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { lookupLine, signCategories, signs } from '../data/lookup';
+const CAPTURE_MS = 2500;
 
-// ─── Mock recent translations ─────────────────────────────────────────────────
-const recentHistory = [
-  { id: 1, sign: 'Hello', urdu: 'ہیلو', time: '2 min ago' },
-  { id: 2, sign: 'Thank You', urdu: 'شکریہ', time: '5 min ago' },
-  { id: 3, sign: 'Water', urdu: 'پانی', time: '12 min ago' },
-];
+function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
-// ─── Stat cards for sidebar ───────────────────────────────────────────────────
-const stats = [
-  { icon: <Zap size={18} />, label: 'Translations Today', value: '24' },
-  { icon: <Clock size={18} />, label: 'Avg. Response', value: '0.3s' },
-  { icon: <Languages size={18} />, label: 'Languages', value: '2' },
-];
+function errorText(data, fallback) {
+  if (typeof data?.detail === 'string') return data.detail;
+  return fallback;
+}
 
-// ═══════════════════════════════════════════════════════════════════════════════
+function signKey(sign) {
+  return `${sign.category}-${sign.english}`;
+}
+
+function SignPicture({ sign, playing, onPlay }) {
+  const key = signKey(sign);
+  if (playing === key && sign.video) {
+    return (
+      <video
+        className="sign-still"
+        src={sign.video}
+        poster={sign.image || undefined}
+        autoPlay
+        controls
+        playsInline
+        referrerPolicy="no-referrer"
+        aria-label={`${sign.english} sign`}
+      />
+    );
+  }
+  if (sign.image) {
+    return (
+      <button
+        type="button"
+        className="sign-still"
+        onClick={() => sign.video && onPlay(key)}
+        aria-label={sign.video ? `Play the ${sign.english} sign` : `${sign.english} sign`}
+      >
+        <img src={sign.image} alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer" />
+      </button>
+    );
+  }
+  if (sign.video) {
+    return (
+      <video
+        className="sign-still"
+        src={sign.video}
+        preload="metadata"
+        muted
+        playsInline
+        referrerPolicy="no-referrer"
+        aria-label={`Play the ${sign.english} sign`}
+        onClick={() => onPlay(key)}
+      />
+    );
+  }
+  return <div className="sign-still sign-still-empty">No picture</div>;
+}
+
+async function captureFrames(video) {
+  const canvas = document.createElement('canvas');
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  const context = canvas.getContext('2d');
+  const frames = [];
+  const started = performance.now();
+  while (performance.now() - started < CAPTURE_MS) {
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg', 0.85));
+    if (blob) frames.push(blob);
+    await wait(100);
+  }
+  return frames;
+}
+
 export default function Dashboard() {
-  const [activeTab, setActiveTab]     = useState('camera');
-  const [outputLang, setOutputLang]   = useState('Urdu');
-  const [inputText, setInputText]     = useState('');
-  const [result, setResult]           = useState('');
-  const [copied, setCopied]           = useState(false);
+  const [activeTab, setActiveTab] = useState('camera');
+  const [outputLang, setOutputLang] = useState('Urdu');
+  const [inputText, setInputText] = useState('');
+  const [result, setResult] = useState('');
+  const [copied, setCopied] = useState(false);
   const [cameraActive, setCameraActive] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [note, setNote] = useState('');
+  const [noteIsError, setNoteIsError] = useState(false);
+  const [query, setQuery] = useState('');
+  const [resultSigns, setResultSigns] = useState([]);
+  const [playing, setPlaying] = useState('');
   const videoRef = useRef(null);
+  const visibleSigns = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return signs;
+    return signs.filter((sign) => (
+      sign.english.toLowerCase().includes(q) || sign.urdu.includes(query.trim()) || sign.category.toLowerCase().includes(q)
+    ));
+  }, [query]);
 
-  // ── Start/stop camera ──────────────────────────────────────────────────────
+  useEffect(() => {
+    const video = videoRef.current;
+    return () => {
+      video?.srcObject?.getTracks().forEach((track) => track.stop());
+    };
+  }, []);
+
   const toggleCamera = async () => {
     if (!cameraActive) {
       try {
         const stream = await navigator.mediaDevices.getUserMedia({ video: true });
         if (videoRef.current) videoRef.current.srcObject = stream;
         setCameraActive(true);
+        setNote('');
       } catch {
-        alert('Camera permission denied or not available.');
+        setNoteIsError(true);
+        setNote('The browser blocked the camera, or this device has none.');
       }
-    } else {
-      if (videoRef.current?.srcObject) {
-        videoRef.current.srcObject.getTracks().forEach(t => t.stop());
-        videoRef.current.srcObject = null;
+      return;
+    }
+
+    videoRef.current?.srcObject?.getTracks().forEach((track) => track.stop());
+    if (videoRef.current) videoRef.current.srcObject = null;
+    setCameraActive(false);
+  };
+
+  const handleTranslate = async () => {
+    if (activeTab === 'text') {
+      if (!inputText.trim()) {
+        setNoteIsError(true);
+        setNote('Type a line first.');
+        setResult('');
+        setResultSigns([]);
+        return;
       }
-      setCameraActive(false);
+      const matches = lookupLine(inputText);
+      if (!matches.length) {
+        setNoteIsError(true);
+        setNote('None of those words are in the common sign list.');
+        setResult('');
+        setResultSigns([]);
+        return;
+      }
+      const lines = matches.map((sign) => (
+        outputLang === 'Urdu' ? `${sign.urdu} (${sign.english})` : `${sign.english} — ${sign.urdu}`
+      ));
+      const trained = matches.filter((sign) => sign.camera).map((sign) => sign.english);
+      setNoteIsError(false);
+      setResult(lines.join('\n'));
+      setResultSigns(matches);
+      setNote(trained.length
+        ? `The camera model was trained on ${trained.join(', ')}. Naming them from video still needs the model file.`
+        : 'These are the English and Urdu names. The camera was not trained on these signs.');
+      return;
+    }
+
+    const video = videoRef.current;
+    if (!cameraActive || !video?.videoWidth) {
+      setNoteIsError(true);
+      setNote('Start the camera, hold a sign, then press Translate.');
+      return;
+    }
+
+    setBusy(true);
+    setNoteIsError(false);
+    setNote('Hold the sign still.');
+    setResult('');
+    setResultSigns([]);
+    try {
+      const frames = await captureFrames(video);
+      const body = new FormData();
+      frames.forEach((blob, index) => body.append('frames', blob, `frame-${index}.jpg`));
+      const response = await fetch('/api/recognize', { method: 'POST', body });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        setNoteIsError(true);
+        const detail = errorText(data, 'Recognition failed.');
+        setNote(detail.includes('word_transformer.pt') || detail.includes('camera model file')
+          ? 'The camera model file is missing, so this sign cannot be named yet. The list below still has the common signs and their Urdu.'
+          : detail);
+        return;
+      }
+      const label = outputLang === 'Urdu' ? `${data.urdu} (${data.word})` : data.word;
+      const percent = Math.round((data.confidence || 0) * 100);
+      setResult(`${label} · ${percent}%`);
+      setResultSigns(signs.filter((sign) => sign.english.toLowerCase() === String(data.word || '').toLowerCase()));
+      const others = (data.top3 || []).slice(1).map((item) => (
+        outputLang === 'Urdu' ? `${item.urdu} (${item.word})` : item.word
+      ));
+      setNoteIsError(false);
+      setNote(others.length ? `Also considered: ${others.join(', ')}` : '');
+    } catch {
+      setNoteIsError(true);
+      setNote('The recognition server is not running.');
+    } finally {
+      setBusy(false);
     }
   };
 
-  // ── Mock translate ─────────────────────────────────────────────────────────
-  const handleTranslate = () => {
-    if (activeTab === 'text' && inputText.trim()) {
-      setResult(outputLang === 'Urdu' ? 'ترجمہ یہاں دکھایا جائے گا۔' : 'Translation will appear here.');
-    } else if (activeTab === 'camera') {
-      setResult(outputLang === 'Urdu' ? 'اشارہ پہچانا جا رہا ہے...' : 'Gesture being recognized...');
-    }
-  };
-
-  // ── Copy to clipboard ──────────────────────────────────────────────────────
   const handleCopy = () => {
-    if (result) { navigator.clipboard.writeText(result); setCopied(true); setTimeout(() => setCopied(false), 2000); }
+    if (!result) return;
+    navigator.clipboard.writeText(result);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const selectTab = (id) => {
+    setActiveTab(id);
+    setNote('');
+    setNoteIsError(false);
+  };
+
+  const onTabKey = (event) => {
+    if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+    event.preventDefault();
+    const order = ['camera', 'text'];
+    const index = order.indexOf(activeTab);
+    const next = order[(index + (event.key === 'ArrowRight' ? 1 : -1) + order.length) % order.length];
+    selectTab(next);
+    document.getElementById(`tab-${next}`)?.focus();
   };
 
   return (
-    /* ══════════════════════════════
-       DASHBOARD PAGE WRAPPER
-       Light neumorphic background
-       ══════════════════════════════ */
-    <div className="min-h-screen pt-20 pb-12 px-4 sm:px-6 lg:px-8" style={{ background: 'linear-gradient(135deg, #e8edf4 0%, #d6e4f7 100%)', minHeight: '100vh' }}>
-
-      <div className="max-w-7xl mx-auto">
-
-        {/* ── Dashboard Header ─────────────────────────────────────── */}
-        <div className="flex items-center justify-between mb-8 pt-4">
+    <div className="page">
+      <div className="wrap">
+        <div className="page-head">
           <div>
-            <h1 className="text-3xl font-extrabold text-[#003d75]">Translation Studio</h1>
-            <p className="text-sm text-[#4a6fa5] mt-1">Pakistani Sign Language → Urdu / English</p>
+            <h1>Studio</h1>
+            <p>One sign at a time.</p>
           </div>
-          <div className="flex items-center gap-3 bg-white/60 border border-white/80 rounded-full px-4 py-2 shadow-sm">
-            <div className="w-8 h-8 rounded-full bg-[#005aa7] flex items-center justify-center">
-              <User size={16} className="text-white" />
+          <label className="field-label">
+            Output
+            <select className="select" value={outputLang} onChange={(e) => setOutputLang(e.target.value)} style={{ marginTop: 6 }}>
+              <option>Urdu</option>
+              <option>English</option>
+            </select>
+          </label>
+        </div>
+
+        <div className="tabs" role="tablist" aria-label="Studio mode" onKeyDown={onTabKey}>
+          <button id="tab-camera" className="tab" type="button" role="tab" aria-selected={activeTab === 'camera'} aria-controls="panel-camera" tabIndex={activeTab === 'camera' ? 0 : -1} onClick={() => selectTab('camera')}>Sign to text</button>
+          <button id="tab-text" className="tab" type="button" role="tab" aria-selected={activeTab === 'text'} aria-controls="panel-text" tabIndex={activeTab === 'text' ? 0 : -1} onClick={() => selectTab('text')}>Typed line</button>
+        </div>
+
+        <div className="studio-frame">
+          <div className="stage" hidden={activeTab !== 'camera'} id="panel-camera" role="tabpanel" aria-labelledby="tab-camera">
+            <video ref={videoRef} autoPlay playsInline muted aria-label="Camera preview" />
+            {!cameraActive && (
+              <div className="stage-off">
+                <p>Camera off. Start it, then hold one sign in frame.</p>
+              </div>
+            )}
+          </div>
+          {activeTab === 'text' && (
+            <div id="panel-text" role="tabpanel" aria-labelledby="tab-text">
+              <p className="hint" style={{ padding: '16px 16px 0' }}>Type English or Urdu from the list. The sign shows beside the words.</p>
+              <textarea
+                className="field area"
+                value={inputText}
+                onChange={(e) => setInputText(e.target.value)}
+                aria-label="Line to keep"
+                placeholder="English or Urdu"
+                style={{ border: 0, borderRadius: 0, background: 'transparent' }}
+              />
             </div>
-            <span className="text-sm font-semibold text-[#003d75]">My Account</span>
+          )}
+
+          <div className="row-actions">
+            {activeTab === 'camera' ? (
+              <button
+                type="button"
+                className={cameraActive ? 'btn btn-danger' : 'btn'}
+                onClick={toggleCamera}
+              >
+                {cameraActive ? 'Stop the camera' : 'Start the camera'}
+              </button>
+            ) : (
+              <span className="count">{inputText.length} characters</span>
+            )}
+            <button type="button" className="btn" onClick={handleTranslate} disabled={busy} aria-busy={busy}>
+              {busy ? 'Reading the sign' : 'Translate'}
+            </button>
+          </div>
+
+          <div className="result-block" aria-live="polite" aria-atomic="true">
+            <div className="result-head" style={{ padding: 0, border: 0 }}>
+              <span className="field-label">Result</span>
+              <span style={{ display: 'flex', gap: 8 }}>
+                <button type="button" className="btn btn-quiet" onClick={() => { setResult(''); setNote(''); setResultSigns([]); setPlaying(''); }}>Clear</button>
+                <button type="button" className="btn btn-quiet" onClick={handleCopy} disabled={!result}>
+                  {copied ? 'Copied' : 'Copy the result'}
+                </button>
+              </span>
+            </div>
+            {result ? <p style={{ whiteSpace: 'pre-line' }}>{result}</p> : <p className="result-empty">Nothing yet.</p>}
+            {resultSigns.length > 0 && (
+              <div className="result-signs">
+                {resultSigns.map((sign) => (
+                  <SignPicture key={signKey(sign)} sign={sign} playing={playing} onPlay={setPlaying} />
+                ))}
+              </div>
+            )}
+            {note && <p className={noteIsError ? 'note-bad' : 'hint'} role={noteIsError ? 'alert' : 'status'}>{note}</p>}
           </div>
         </div>
 
-        {/* ── Main Layout: Left panel + Right sidebar ───────────────── */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-
-          {/* ════════════════════════════════
-              LEFT — Main Translation Area
-              ════════════════════════════════ */}
-          <div className="lg:col-span-2 space-y-5">
-
-            {/* Tab Switcher */}
-            <div className="neumorphic-panel p-2 inline-flex gap-2">
-              {[{ id: 'camera', icon: <Camera size={16} />, label: 'Sign to Text' },
-                { id: 'text',   icon: <Type   size={16} />, label: 'Text to Sign' }].map(tab => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-200"
-                  style={activeTab === tab.id
-                    ? { background: '#005aa7', color: '#fff', boxShadow: '0 4px 12px rgba(0,90,167,0.35)' }
-                    : { color: '#4a6fa5' }}
-                >
-                  {tab.icon} {tab.label}
-                </button>
-              ))}
+        <section className="sign-list" aria-labelledby="sign-list-title">
+          <div className="page-head">
+            <div>
+              <h2 id="sign-list-title">Common signs</h2>
+              <p>English and Urdu names for everyday Pakistani Sign Language, with the dictionary picture beside each word. Press a picture to play the sign. A Camera mark means the video model was trained on that word.</p>
             </div>
-
-            {/* Input Panel */}
-            <div className="neumorphic-panel overflow-hidden">
-              <div className="flex items-center justify-between px-5 py-3 border-b border-[#c8d4e8]">
-                <span className="text-sm font-bold text-[#003d75]">
-                  {activeTab === 'camera' ? '📷 Camera Input' : '⌨️ Text Input'}
-                </span>
-                <div className="flex items-center gap-3">
-                  <span className="text-xs text-[#4a6fa5]">Output:</span>
-                  <select
-                    value={outputLang}
-                    onChange={e => setOutputLang(e.target.value)}
-                    className="text-sm font-semibold text-[#005aa7] bg-transparent outline-none cursor-pointer"
-                  >
-                    <option>Urdu</option>
-                    <option>English</option>
-                  </select>
-                </div>
-              </div>
-
-              {/* Camera view */}
-              {activeTab === 'camera' && (
-                <div className="relative bg-[#1a2e4a] h-72 flex items-center justify-center overflow-hidden">
-                  <video ref={videoRef} autoPlay playsInline muted className="w-full h-full object-cover" />
-                  {!cameraActive && (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-                      <div className="w-20 h-20 rounded-full bg-white/10 border-2 border-white/30 flex items-center justify-center">
-                        <Camera size={36} className="text-white/60" />
-                      </div>
-                      <p className="text-white/60 text-sm">Camera is off</p>
-                    </div>
-                  )}
-                  {/* Camera overlay corners */}
-                  {cameraActive && (
-                    <>
-                      <div className="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-green-400 rounded-tl" />
-                      <div className="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-green-400 rounded-tr" />
-                      <div className="absolute bottom-3 left-3 w-6 h-6 border-b-2 border-l-2 border-green-400 rounded-bl" />
-                      <div className="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 border-green-400 rounded-br" />
-                      <div className="absolute top-3 right-3 flex items-center gap-1 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-                        <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" /> LIVE
-                      </div>
-                    </>
-                  )}
-                </div>
-              )}
-
-              {/* Text input */}
-              {activeTab === 'text' && (
-                <textarea
-                  value={inputText}
-                  onChange={e => setInputText(e.target.value)}
-                  className="w-full h-72 p-5 bg-transparent resize-none outline-none text-base text-[#1a2e4a] placeholder-[#7a9cc0] leading-relaxed"
-                  placeholder="Type your text in English or Urdu here to convert into PSL gesture animation..."
-                />
-              )}
-
-              {/* Action bar */}
-              <div className="flex items-center justify-between px-5 py-3 bg-white/30 border-t border-[#c8d4e8]">
-                {activeTab === 'camera' ? (
-                  <button onClick={toggleCamera}
-                    className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all"
-                    style={cameraActive
-                      ? { background: '#dc2626', color: '#fff', boxShadow: '0 4px 12px rgba(220,38,38,0.35)' }
-                      : { background: '#005aa7', color: '#fff', boxShadow: '0 4px 12px rgba(0,90,167,0.35)' }}
-                  >
-                    <Camera size={15} />
-                    {cameraActive ? 'Stop Camera' : 'Start Camera'}
-                  </button>
-                ) : (
-                  <span className="text-xs text-[#7a9cc0]">{inputText.length} characters</span>
-                )}
-                <button
-                  onClick={handleTranslate}
-                  className="flex items-center gap-2 px-6 py-2 rounded-full text-sm font-bold text-white transition-all"
-                  style={{ background: '#005aa7', boxShadow: '0 4px 12px rgba(0,90,167,0.35)' }}
-                >
-                  <Zap size={14} /> Translate
-                </button>
-              </div>
-            </div>
-
-            {/* Output Panel */}
-            <div className="neumorphic-panel overflow-hidden">
-              <div className="flex items-center justify-between px-5 py-3 border-b border-[#c8d4e8]">
-                <span className="text-sm font-bold text-[#003d75]">📝 Translation Result</span>
-                <div className="flex items-center gap-2">
-                  <button onClick={() => setResult('')} className="neumorphic-button p-2 text-[#4a6fa5]" title="Clear">
-                    <RefreshCw size={15} />
-                  </button>
-                  <button onClick={() => { /* speak */ }} className="neumorphic-button p-2 text-[#4a6fa5]" title="Read Aloud">
-                    <Volume2 size={15} />
-                  </button>
-                  <button onClick={handleCopy} className="neumorphic-button px-4 py-2 text-sm flex items-center gap-1.5 text-[#005aa7]">
-                    {copied ? <><CheckCircle size={14} className="text-green-600" /> Copied!</> : <><Copy size={14} /> Copy</>}
-                  </button>
-                </div>
-              </div>
-              <div className="min-h-32 p-6">
-                {result
-                  ? <p className="text-xl leading-relaxed text-[#1a2e4a] font-medium">{result}</p>
-                  : <p className="text-[#7a9cc0] text-sm italic flex items-center gap-2"><AlertCircle size={16} /> Translation output will appear here...</p>
-                }
-              </div>
-            </div>
+            <label className="field-label">
+              Find a sign
+              <input className="field" value={query} onChange={(e) => setQuery(e.target.value)} style={{ marginTop: 6 }} placeholder="Water, پانی, food" />
+            </label>
           </div>
-
-          {/* ════════════════════════════════
-              RIGHT — Sidebar
-              ════════════════════════════════ */}
-          <div className="space-y-5">
-
-            {/* Stats */}
-            <div className="neumorphic-panel p-5">
-              <h3 className="text-sm font-bold text-[#003d75] uppercase tracking-wider mb-4">Session Stats</h3>
-              <div className="space-y-3">
-                {stats.map(s => (
-                  <div key={s.label} className="flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-[#4a6fa5] text-sm">
-                      <span className="w-7 h-7 bg-[#d6e4f7] rounded-full flex items-center justify-center">{s.icon}</span>
-                      {s.label}
+          {signCategories(visibleSigns).map((category) => (
+            <div key={category} className="sign-group">
+              <h3>{category}</h3>
+              <div className="sign-grid">
+                {visibleSigns.filter((sign) => sign.category === category).map((sign) => (
+                  <article key={signKey(sign)} className="sign-card">
+                    <SignPicture sign={sign} playing={playing} onPlay={setPlaying} />
+                    <div className="sign-words">
+                      <strong>{outputLang === 'Urdu' ? sign.urdu : sign.english}</strong>
+                      <span>{outputLang === 'Urdu' ? sign.english : sign.urdu}</span>
+                      {sign.camera && <em>Camera</em>}
                     </div>
-                    <span className="font-extrabold text-[#005aa7]">{s.value}</span>
-                  </div>
+                  </article>
                 ))}
               </div>
             </div>
-
-            {/* Recent history */}
-            <div className="neumorphic-panel p-5">
-              <h3 className="text-sm font-bold text-[#003d75] uppercase tracking-wider mb-4">Recent Translations</h3>
-              <div className="space-y-3">
-                {recentHistory.map(h => (
-                  <div key={h.id} className="p-3 rounded-xl bg-white/50 border border-white hover:bg-white/80 cursor-pointer transition-colors">
-                    <div className="flex justify-between items-start">
-                      <span className="text-sm font-bold text-[#1a2e4a]">{h.sign}</span>
-                      <span className="text-xs text-[#7a9cc0]">{h.time}</span>
-                    </div>
-                    <span className="text-sm text-[#4a6fa5] font-medium">{h.urdu}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Quick tips */}
-            <div className="neumorphic-panel p-5">
-              <h3 className="text-sm font-bold text-[#003d75] uppercase tracking-wider mb-3">💡 Quick Tips</h3>
-              <ul className="space-y-2 text-xs text-[#4a6fa5] leading-relaxed">
-                <li>• Ensure good lighting for accurate recognition</li>
-                <li>• Keep your hand within the camera frame</li>
-                <li>• Perform gestures at a steady pace</li>
-                <li>• Use sentence mode for full conversations</li>
-              </ul>
-            </div>
-
-            {/* Upgrade banner */}
-            <div className="rounded-2xl p-5 text-white" style={{ background: 'linear-gradient(135deg, #005aa7 0%, #1a7fd4 100%)', boxShadow: '0 8px 24px rgba(0,90,167,0.35)' }}>
-              <div className="flex items-center gap-2 mb-2">
-                <Zap size={18} className="text-yellow-300" />
-                <span className="font-bold text-sm">Upgrade to Pro</span>
-              </div>
-              <p className="text-xs text-white/80 mb-4 leading-relaxed">Unlock sentence-level translation, offline mode, and advanced features.</p>
-              <Link to="/signup" className="block text-center text-sm font-bold py-2 rounded-full bg-white text-[#005aa7] hover:bg-blue-50 transition-colors">
-                Start Free Trial
-              </Link>
-            </div>
-
-          </div>
-        </div>
+          ))}
+          {visibleSigns.length === 0 && <p className="hint">No sign matches that search.</p>}
+        </section>
       </div>
     </div>
   );

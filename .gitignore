@@ -12,6 +12,13 @@ dist
 dist-ssr
 *.local
 
+server/.env
+server/.venv
+server/*.db
+server/mp_models/
+server/models/*.pt
+server/__pycache__/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

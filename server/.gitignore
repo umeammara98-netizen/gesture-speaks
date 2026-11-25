@@ -1,0 +1,7 @@
+.env
+.venv
+*.db
+mp_models/
+models/*.pt
+__pycache__/
+*.pyc
